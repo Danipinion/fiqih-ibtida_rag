@@ -34,7 +34,7 @@ rag-uts-[nama-kelompok]/
 │   ├── embeddings.py        # 🔧 WAJIB DIISI: Konfigurasi embedding
 │   └── utils.py             # Helper functions
 ├── ui/
-│   └── app.py               # 🔧 WAJIB DIISI: Antarmuka Streamlit
+│   └── app.py               # 🔧 WAJIB DIISI: Antarmuka Streamlit // nopan
 ├── docs/
 │   └── arsitektur.png       # 📌 Diagram arsitektur (buat sendiri)
 ├── evaluation/
