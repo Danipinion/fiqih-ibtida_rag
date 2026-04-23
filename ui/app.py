@@ -11,8 +11,8 @@ import sys
 import os
 from pathlib import Path
 
-# Agar bisa import dari folder src/
-sys.path.append(str(Path(__file__).parent.parent / "src"))
+# Agar bisa import dari folder src/ sebagai module
+sys.path.append(str(Path(__file__).parent.parent))
 
 import streamlit as st
 import pandas as pd
@@ -562,14 +562,9 @@ st.divider()
 
 # ─── Sidebar: Info & Konfigurasi ─────────────────────────────────────────────
 with st.sidebar:
-    st.divider()
-    col1, col2 = st.columns(2)
-    col1.metric("Status", "Online", delta="Stable")
-    col2.metric("Latency", "1.2s", delta="-0.2s")
-
     top_k = st.slider(
         "Jumlah dokumen relevan (top-k)",
-        min_value=1, max_value=10, value=3,
+        min_value=1, max_value=5, value=3,
         help="Berapa banyak chunk yang diambil dari vector database"
     )
 
@@ -586,7 +581,7 @@ with st.sidebar:
     - Habib (Project Manager)  
     - Novandy (UI & Data Analyst)  
     **Domain:** Kitab Fiqih Ibtida  
-    **LLM:** Gemini 1.5 Flash  
+    **LLM:** Gemini 2.5 Flash  
     **Vector DB:** ChromaDB  
     """)
 
@@ -599,7 +594,7 @@ with st.sidebar:
 def load_vs():
     """Load vector store sekali saja, di-cache untuk performa."""
     try:
-        from query import load_vectorstore
+        from src.query import load_vectorstore
         return load_vectorstore(), None
     except FileNotFoundError as e:
         return None, str(e)
@@ -743,7 +738,7 @@ with tab_chat:
         with st.chat_message("assistant"):
             with st.spinner("⏳ Sedang membedah kitab dan merangkum jawaban untukmu..."):
                 try:
-                    from query import answer_question
+                    from src.query import answer_question
                     result = answer_question(question, vectorstore, top_k=top_k)
 
                     st.write(result["answer"])

@@ -29,6 +29,10 @@ def get_collection():
     
     return client.get_collection(name="rag_collection", embedding_function=emb_fn)
 
+# Alias for compatibility with complex UI
+def load_vectorstore():
+    return get_collection()
+
 def retrieve_context(collection, question: str, top_k: int = TOP_K):
     """
     Search for relevant context in ChromaDB.
@@ -44,7 +48,7 @@ def retrieve_context(collection, question: str, top_k: int = TOP_K):
         contexts.append({
             "content": results['documents'][0][i],
             "source": results['metadatas'][0][i].get("source", "unknown"),
-            "distance": results['distances'][0][i] if 'distances' in results else None
+            "score": results['distances'][0][i] if 'distances' in results else 0.0
         })
     
     return contexts
@@ -60,10 +64,11 @@ def build_prompt(question: str, contexts: list):
     prompt = f"""Kamu adalah asisten akademik yang membantu menjawab pertanyaan berdasarkan dokumen yang diberikan.
 
 INSTRUKSI:
-- Jawab HANYA berdasarkan konteks di bawah ini.
-- Jika jawaban tidak ada dalam konteks, katakan "Maaf, saya tidak menemukan informasi tersebut dalam dokumen akademik yang tersedia."
-- Jawab dalam Bahasa Indonesia yang formal, jelas, dan ringkas.
-- Jangan mengarang informasi di luar konteks.
+- Analisis KONTEKS yang diberikan dengan teliti.
+- Jawablah pertanyaan dengan menghubungkan informasi yang ada di dalam KONTEKS.
+- Jika jawaban tidak disebutkan secara eksplisit, cobalah untuk memberikan dedukasi atau jawaban yang masih selaras dengan domain dokumen tersebut (Akademik/Fiqih).
+- Jika terpaksa menggunakan pengetahuan umum di luar teks, pastikan tetap relevan dengan topik dokumen dan berikan penjelasan yang logis.
+- Jawab dalam Bahasa Indonesia yang formal dan berwibawa.
 
 KONTEKS:
 {context_text}
@@ -89,7 +94,7 @@ def get_answer_gemini(prompt: str):
     except Exception as e:
         return f"Error saat memanggil Gemini API: {e}"
 
-def answer_question(question: str, collection=None):
+def answer_question(question: str, collection=None, top_k=TOP_K):
     """
     Complete RAG pipeline: retrieval -> prompt -> generation.
     """
@@ -97,7 +102,7 @@ def answer_question(question: str, collection=None):
         collection = get_collection()
     
     # 1. Retrieval
-    contexts = retrieve_context(collection, question)
+    contexts = retrieve_context(collection, question, top_k=top_k)
     
     # 2. Build Prompt
     prompt = build_prompt(question, contexts)
