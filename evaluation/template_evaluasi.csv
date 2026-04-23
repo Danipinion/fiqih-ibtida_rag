@@ -1,19 +1,13 @@
-No;Pertanyaan;Jawaban Sistem RAG;Jawaban Ideal / Referensi;Skor Relevansi (1-5);Catatan
-1;Pada suatu hari samsul mendapati kuliah pada hari jum'at. mata kuliahnya berakhir berdekatan dengan dilaksankannya sholat jum'at, sehingga samsul melaksanakan sholat jumat di kampusnya, dengan notabene masjid tersebut hanya melaksanakan sholat jumat ketika ada mahasiswa atau dosen dengan jumlah penduduk setempat atau orang yang mukim di daerah teresbut tidak diketahui jumlahnya dapat mencukupi sahnya sholat jumat atau tidak, bagaimana hukum sholat jum'at samsul di masjid kampusnya  ;e;;;
-2;Suki adalah seorang yang baru masuk islam(mualaf), dia akan melaksanakan sholat dhuhur, sebelum itu dia berwudhu terlebih dahulu, saat melakukan wudhu dia melaksanakan niat sebelum membasuh muka, bagaimana hukum sholat Suki dengan niat sebelum membasuh muka tanpa niat saat membasuh muka?;e;;;
-3;Hanif adalah seorang yang kaya raya dia menggunakan wadah dengan bahan emas apa hukum menggunakan wadah tersebut?;e;;;
-4;Udon terjebak di pegunungan, dia memekai sepatu atau muzah tetapi sebelumnya dia belum suci saat dia melakukan wudhu tepatnya saat membasuh kaki dia hanya mengusap muzah tersebut, apa hukum wudhu udon?;e;;;
-5;Hanif adalah seorang yang sangat kaya, dia memiliki 100 gr dan syarat zakat telah terpenuhi berapakah zajat yang harus dikeluarkan Hanif?;e;;;
-6;Musim Haji telah tiba, dani akan melaksanakan haji, saat ihram dia menyisir rambutnya, apa hukum dani menyisir rambut saat dilaksankannya ihram?;e;;;
-7;Sebutkan akad jual beli;e;;;
-8;Lebaran akan tiba, suatu hari Rina akan menukar uang baru agar dibagikan saat lebaran apa hukum menukar uang dan mungkin menambah uang untuk pembayaran penukaran uang?;e;;;
-9;Sebutkan syarat syarat barang yang dipesan!;e;;;
-10;Ujang adslah anak kecil apa hukum ujam membeli barang?;e;;;
-;;;;;
-;;;;",,,,Rata-rata:,""=AVERAGE(E2:E11)""";
-PANDUAN PENILAIAN SKOR:;;;;;
-"Skor 5,""Jawaban sangat relevan, akurat, dan lengkap""";;;;;
-"Skor 4,""Jawaban relevan dan sebagian besar akurat""";;;;;
-"Skor 3,""Jawaban cukup relevan tapi ada bagian yang kurang atau tidak akurat""";;;;;
-"Skor 2,""Jawaban kurang relevan, banyak informasi yang salah""";;;;;
-"Skor 1,""Jawaban tidak relevan atau sistem tidak bisa menjawab sama sekali""";;;;;
+No;Pertanyaan;Jawaban Sistem RAG;Jawaban Ideal / Referensi;Skor Relevansi (1-5);Catatan;PANDUAN PENILAIAN SKOR:
+1;Pada suatu hari samsul mendapati kuliah pada hari jum'at. mata kuliahnya berakhir berdekatan dengan dilaksankannya sholat jum'at, sehingga samsul melaksanakan sholat jumat di kampusnya, dengan notabene masjid tersebut hanya melaksanakan sholat jumat ketika ada mahasiswa atau dosen dengan jumlah penduduk setempat atau orang yang mukim di daerah teresbut tidak diketahui jumlahnya dapat mencukupi sahnya sholat jumat atau tidak, bagaimana hukum sholat jum'at samsul di masjid kampusnya  ;e;;;;"Skor 5,""Jawaban sangat relevan, akurat, dan lengkap"""
+2;Suki adalah seorang yang baru masuk islam(mualaf), dia akan melaksanakan sholat dhuhur, sebelum itu dia berwudhu terlebih dahulu, saat melakukan wudhu dia melaksanakan niat sebelum membasuh muka, bagaimana hukum sholat Suki dengan niat sebelum membasuh muka tanpa niat saat membasuh muka?;e;;;;"Skor 4,""Jawaban relevan dan sebagian besar akurat"""
+3;Hanif adalah seorang yang kaya raya dia menggunakan wadah dengan bahan emas apa hukum menggunakan wadah tersebut?;e;;;;"Skor 3,""Jawaban cukup relevan tapi ada bagian yang kurang atau tidak akurat"""
+4;Udon terjebak di pegunungan, dia memekai sepatu atau muzah tetapi sebelumnya dia belum suci saat dia melakukan wudhu tepatnya saat membasuh kaki dia hanya mengusap muzah tersebut, apa hukum wudhu udon?;e;;;;"Skor 2,""Jawaban kurang relevan, banyak informasi yang salah"""
+5;Hanif adalah seorang yang sangat kaya, dia memiliki 100 gr dan syarat zakat telah terpenuhi berapakah zajat yang harus dikeluarkan Hanif?;e;;;;"Skor 1,""Jawaban tidak relevan atau sistem tidak bisa menjawab sama sekali"""
+6;Musim Haji telah tiba, dani akan melaksanakan haji, saat ihram dia menyisir rambutnya, apa hukum dani menyisir rambut saat dilaksankannya ihram?;e;;;;
+7;Sebutkan akad jual beli;e;;;;
+8;Lebaran akan tiba, suatu hari Rina akan menukar uang baru agar dibagikan saat lebaran apa hukum menukar uang dan mungkin menambah uang untuk pembayaran penukaran uang?;e;;;;
+9;Sebutkan syarat syarat barang yang dipesan!;e;;;;
+10;Ujang adslah anak kecil apa hukum ujam membeli barang?;e;;;;
+;;;;;;
+;;;;",,,,Rata-rata:,""=AVERAGE(E2:E11)""";;
