@@ -1,49 +1,47 @@
-# 🤖 RAG Starter Pack — UTS Data Engineering
+# 🤖 RAG Fiqih Ibtida — UTS Data Engineering
 
-> **Retrieval-Augmented Generation** — Sistem Tanya-Jawab Cerdas Berbasis Dokumen
+> **Retrieval-Augmented Generation** — Sistem Tanya-Jawab Cerdas Berbasis Dokumen Kitab Fiqih Dasar (Fathul Qorib, Kasyifatus Saja, Safinatun Najah).
 
-Starter pack ini adalah **kerangka awal** proyek RAG untuk UTS Data Engineering D4.
-Mahasiswa mengisi, memodifikasi, dan mengembangkan kode ini sesuai topik kelompok masing-masing.
+Proyek ini adalah implementasi sistem RAG (Retrieval-Augmented Generation) yang dirancang untuk membantu pengguna memahami hukum-hukum fiqih berdasarkan sumber kitab klasik yang telah dikonversi menjadi data digital.
 
 ---
 
 ## 👥 Identitas Kelompok
 
-| Nama                         | NIM       | Tugas Utama     |
+| Nama                          | NIM       | Tugas Utama     |
 | ---------------------------- | --------- | --------------- |
-| Mohammad Dani Taufiqurrohman | 244311048 | Data Engginer   |
+| Mohammad Dani Taufiqurrohman | 244311048 | Data Engineer   |
 | Habib Hajid Taqiudin         | 244311043 | Project Manager |
 | Novandy Triarto Wahyono      | 244311053 | Data Analyst    |
 
-**Topik Domain:** _Akademik_
-**Stack yang Dipilih:** _From Scratch_  
-**LLM yang Digunakan:** _Gemini_
-**Vector DB yang Digunakan:** _ChromaDB_
+**Topik Domain:** *Akademik & Keagamaan (Fiqih)* 
+**Stack Teknis:** *Python (From Scratch)* 
+**LLM:** *Gemini 2.5 Flash* 
+**Vector DB:** *ChromaDB* 
+**Embedding:** *Google Generative AI Embeddings*
 
 ---
 
 ## 🗂️ Struktur Proyek
 
-```
-rag-uts-[nama-kelompok]/
-├── data/                    # Dokumen sumber Anda (PDF, TXT, dll.)
-│   └── sample.txt           # Contoh dokumen (ganti dengan dokumen Anda)
+```text
+fiqih-ibtida_rag/
+├── data/                    # Dokumen sumber
+│   ├── Feqih trendy.pdf
+│   ├── Fiqih Idola Terjemah Fathul Qorib - 1.pdf
+│   ├── SafinatunNajah-syaikhSalimBinSumair.docx
+│   └── Terjemah-Kasyifatus-Saja-1.pdf
 ├── src/
-│   ├── indexing.py          # 🔧 WAJIB DIISI: Pipeline indexing
-│   ├── query.py             # 🔧 WAJIB DIISI: Pipeline query & retrieval
-│   ├── embeddings.py        # 🔧 WAJIB DIISI: Konfigurasi embedding
-│   └── utils.py             # Helper functions
+│   ├── embeddings.py        # Konfigurasi model embedding
+│   ├── indexing.py          # Pipeline pemrosesan dokumen ke Vector DB
+│   ├── query.py             # Logika retrieval dan augmentasi ke Gemini
+│   └── __init__.py
 ├── ui/
-│   └── app.py               # 🔧 WAJIB DIISI: Antarmuka Streamlit // nopan
-├── docs/
-│   └── arsitektur.png       # 📌 Diagram arsitektur (buat sendiri)
+│   └── app.py               # Interface Streamlit
 ├── evaluation/
-│   └── hasil_evaluasi.xlsx  # 📌 Tabel evaluasi 10 pertanyaan
-├── notebooks/
-│   └── 01_demo_rag.ipynb    # Notebook demo dari hands-on session
-├── .env.example             # Template environment variables
-├── .gitignore
-├── requirements.txt
+│   └── template_evaluasi.csv # Data uji performa sistem
+├── .env                     # Konfigurasi
+├── requirements.txt         # Daftar library Python
 └── README.md
 ```
 
@@ -55,8 +53,8 @@ rag-uts-[nama-kelompok]/
 
 ```bash
 # Clone repository ini
-git clone https://github.com/[username]/rag-uts-[kelompok].git
-cd rag-uts-[kelompok]
+git clone [https://github.com/danipinion/fiqih-ibtida_rag.git](https://github.com/danipinion/fiqih-ibtida_rag.git)
+cd fiqih-ibtida_rag
 
 # Buat virtual environment
 python -m venv venv
@@ -86,7 +84,7 @@ Letakkan dokumen sumber Anda di folder `data/`:
 cp dokumen-saya.pdf data/
 ```
 
-### 4. Jalankan Indexing (sekali saja)
+### 4. Jalankan Indexing
 
 ```bash
 python src/indexing.py
@@ -97,9 +95,6 @@ python src/indexing.py
 ```bash
 # Dengan Streamlit UI
 streamlit run ui/app.py
-
-# Atau via CLI
-python src/query.py
 ```
 
 ---
@@ -113,13 +108,11 @@ Semua konfigurasi utama ada di `src/config.py` (atau langsung di setiap file):
 | `CHUNK_SIZE`    | 500     | Ukuran setiap chunk teks (karakter) |
 | `CHUNK_OVERLAP` | 50      | Overlap antar chunk                 |
 | `TOP_K`         | 3       | Jumlah dokumen relevan yang diambil |
-| `MODEL_NAME`    | _(isi)_ | Nama model LLM yang digunakan       |
+| `MODEL_NAME`    | _gemini-2.5-flash_ | Mesin AI untuk pemrosesan jawaban       |
 
 ---
 
 ## 📊 Hasil Evaluasi
-
-_(Isi setelah pengujian selesai)_
 
 | #   | Pertanyaan | Jawaban Sistem | Jawaban Ideal | Skor (1-5) |
 | --- | ---------- | -------------- | ------------- | ---------- |
@@ -145,10 +138,9 @@ _(Masukkan gambar diagram arsitektur di sini)_
 
 ## 📚 Referensi & Sumber
 
-- Framework: _(LangChain docs / LlamaIndex docs)_
-- LLM: _(Groq / Gemini / Ollama)_
-- Vector DB: _(ChromaDB / FAISS docs)_
-- Tutorial yang digunakan: _(cantumkan URL)_
+- Framework: _Scract_
+- LLM: _Gemini_
+- Vector DB: _ChromaDB_
 
 ---
 
@@ -156,4 +148,3 @@ _(Masukkan gambar diagram arsitektur di sini)_
 
 - **Mata Kuliah:** Data Engineering
 - **Program Studi:** D4 Teknologi Rekayasa Perangkat Lunak
-- **Deadline:** _(isi tanggal)_
