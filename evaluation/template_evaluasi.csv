@@ -1,13 +1,44 @@
 No;Pertanyaan;Jawaban Sistem RAG;Jawaban Ideal / Referensi;Skor Relevansi (1-5);Catatan;PANDUAN PENILAIAN SKOR:
-1;Pada suatu hari samsul mendapati kuliah pada hari jum'at. mata kuliahnya berakhir berdekatan dengan dilaksankannya sholat jum'at, sehingga samsul melaksanakan sholat jumat di kampusnya, dengan notabene masjid tersebut hanya melaksanakan sholat jumat ketika ada mahasiswa atau dosen dengan jumlah penduduk setempat atau orang yang mukim di daerah teresbut tidak diketahui jumlahnya dapat mencukupi sahnya sholat jumat atau tidak, bagaimana hukum sholat jum'at samsul di masjid kampusnya  ;e;;;;"Skor 5,""Jawaban sangat relevan, akurat, dan lengkap"""
-2;Suki adalah seorang yang baru masuk islam(mualaf), dia akan melaksanakan sholat dhuhur, sebelum itu dia berwudhu terlebih dahulu, saat melakukan wudhu dia melaksanakan niat sebelum membasuh muka, bagaimana hukum sholat Suki dengan niat sebelum membasuh muka tanpa niat saat membasuh muka?;e;;;;"Skor 4,""Jawaban relevan dan sebagian besar akurat"""
-3;Hanif adalah seorang yang kaya raya dia menggunakan wadah dengan bahan emas apa hukum menggunakan wadah tersebut?;e;;;;"Skor 3,""Jawaban cukup relevan tapi ada bagian yang kurang atau tidak akurat"""
-4;Udon terjebak di pegunungan, dia memekai sepatu atau muzah tetapi sebelumnya dia belum suci saat dia melakukan wudhu tepatnya saat membasuh kaki dia hanya mengusap muzah tersebut, apa hukum wudhu udon?;e;;;;"Skor 2,""Jawaban kurang relevan, banyak informasi yang salah"""
-5;Hanif adalah seorang yang sangat kaya, dia memiliki 100 gr dan syarat zakat telah terpenuhi berapakah zajat yang harus dikeluarkan Hanif?;e;;;;"Skor 1,""Jawaban tidak relevan atau sistem tidak bisa menjawab sama sekali"""
-6;Musim Haji telah tiba, dani akan melaksanakan haji, saat ihram dia menyisir rambutnya, apa hukum dani menyisir rambut saat dilaksankannya ihram?;e;;;;
-7;Sebutkan akad jual beli;e;;;;
-8;Lebaran akan tiba, suatu hari Rina akan menukar uang baru agar dibagikan saat lebaran apa hukum menukar uang dan mungkin menambah uang untuk pembayaran penukaran uang?;e;;;;
-9;Sebutkan syarat syarat barang yang dipesan!;e;;;;
-10;Ujang adslah anak kecil apa hukum ujam membeli barang?;e;;;;
+1;Apa Itu Niat;e;Niat. Menurut syara' hakikat niat adalah menghendaki sesuatu (dalam hati) bersamaan dengan mengerjakan sesuatu tersebut. Apabila menghendaki sesuatu tidak bersamaan dengan pekerjaannya maka dinamakan 'azm (bukan niat). Niat tersebut dilakukan ketika membasuh permulaan bagian dari wajah (muka), yakni melakukan niat harus bersamaan membasuh bagian dari wajah tidak bersamaan saat membasuh seluruh wajah, tidak sebelum dan sesudah membasuh wajah.;;;"Skor 5,""Jawaban sangat relevan, akurat, dan lengkap"""
+2;rukun rukun shalat ada;e;"Fasal; Rukun shalat ada 17:
+1. Niat
+2. Takbiratul ihram
+3. Berdiri bagi yang mampu dalam shalat fardhu www
+4. Membaca al-Fatihah
+5. Rukuk
+6. Tuma'ninah diwaktu ruku
+7. I'tidah
+8. Tuma'ninah diwaktu I'tidal
+9. Sujud
+10. Tuma'ninah diwaktu sujud
+11. Duduk diantara dua sujud
+12. Tuma'ninah diwaktu duduk diantara dua sujud
+13. Tasyahud akhir
+14. Duduk untuk membaca tasyahud
+15. Membaca shalawat Nabi
+16. Salam
+17. Tertib";;;"Skor 4,""Jawaban relevan dan sebagian besar akurat"""
+3;syarat syarat sah shalat jum'at;e;"Syarat-syarat shahnya melakukan
+shatat Jum'at, itu ada 3: di tempat
+tinggal yang menetap, lumtah (yang ikut serta) di datam
+berjama'ah lum'at itu harus
+mencapai 4O orang [aki-laki, dari
+ahti jum'ah,Waktu untuk melaksanakan shalat Jum'at masih tetap berada dalam waktu Dhuhur.";;;"Skor 3,""Jawaban cukup relevan tapi ada bagian yang kurang atau tidak akurat"""
+4;apa itu mukim;e;"Secara istilah, mukim adalah orang yang telah sampai di suatu tempat (selain tempat tinggal asalnya) dan berniat untuk tinggal di sana dalam jangka waktu tertentu, tetapi tidak sampai pada derajat ""menetap selamanya"" (bermukim/menjadi penduduk tetap/mustautin).";;;"Skor 2,""Jawaban kurang relevan, banyak informasi yang salah"""
+5;jika seseorang niat sholat sebelum takbiratul ihram apakah sah sholatnya;e;"Niat salat tidak sah jika dilakukan sebelum takbiratul ihram secara mutlak (terpisah). Niat harus ""berbarengan"" dengan pengucapan huruf pertama takbiratul ihram";;;"Skor 1,""Jawaban tidak relevan atau sistem tidak bisa menjawab sama sekali"""
+6;Fardhu Wudhu ada;e;fardlu-fardlunya wudlu' ada enam perkara: Niat, Membasuh muka, membasuh tangan sampai siku, mengusap kepala, membasuh kaki sampai mata kaki, tertib;;;
+7;sesuatu yang membatalkan shalat;e;"Sesuatu yang dapat membatalkan shalat itu ada 11 (sebelas) perkara : Berbicara dengan disengaja, Melakukan gerakan yang banyak, secara bersambung, Berhadats kecil dan besar., Terkena najis, Terbukanya aurat,Merubah
+niat., Membelakangi Qiblat. Seperti mushalli menjadikan qiblat, Makan dan minum,, Tertawa terbahak-bahak., Murtad,";;;
+8;hawalah adalah;e;Hawalah ialah memindahkan suatu tanggungan hutang dari muhil (orang yang memiliki hutang pada muhtal) kepada muhal alaih (orang yang memiliki hutang pada muhil);;;
+9;urutan wali nikah;e;"Urutan wali nikah adalah sebagai berikut:
+1. Ayah.
+2. Kakek dari ayah.
+3. Saudara kandung.
+4. Saudara seayah.
+5. Anak laki-laki saudara kandung.
+6. Anak laki-laki saudara seayah.
+7. Paman.
+8. Anak laki-laki paman sebagaimana urutan diatas (mendahulukan yang kandung).";;;
+10;hukum shalat gerhana adalah;e;Hukum shalat gerhana adalah sunah muakkad.;;;
 ;;;;;;
 ;;;;",,,,Rata-rata:,""=AVERAGE(E2:E11)""";;
