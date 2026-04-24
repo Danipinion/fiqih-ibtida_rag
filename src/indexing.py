@@ -20,15 +20,6 @@ def load_documents(data_dir: Path):
     Load TXT and PDF documents from the data directory.
     """
     documents = []
-    
-    # Load TXT files
-    for file_path in data_dir.glob("**/*.txt"):
-        try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                content = f.read()
-                documents.append({"content": content, "metadata": {"source": file_path.name}})
-        except Exception as e:
-            print(f"Error loading {file_path}: {e}")
 
     # Load PDF files
     for file_path in data_dir.glob("**/*.pdf"):
@@ -61,8 +52,6 @@ def split_text(documents, chunk_size, chunk_overlap):
         text = doc["content"]
         metadata = doc["metadata"]
         
-        # Simple character-based splitting
-        # For a better approach, consider RecursiveCharacterTextSplitter patterns
         start = 0
         while start < len(text):
             end = start + chunk_size
@@ -105,8 +94,6 @@ def build_index():
         embedding_function=emb_fn
     )
 
-    # Add documents to collection
-    # Chroma needs IDs, documents, and metadatas
     ids = [f"id_{i}" for i in range(len(chunks))]
     documents = [c["content"] for c in chunks]
     metadatas = [c["metadata"] for c in chunks]

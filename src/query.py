@@ -61,14 +61,13 @@ def build_prompt(question: str, contexts: list):
         [f"[Sumber: {c['source']}]\n{c['content']}" for c in contexts]
     )
 
-    prompt = f"""Kamu adalah asisten akademik yang membantu menjawab pertanyaan berdasarkan dokumen yang diberikan.
+    prompt = f"""Kamu adalah asisten yang membantu menjawab pertanyaan berdasarkan dokumen yang diberikan.
 
 INSTRUKSI:
-- Analisis KONTEKS yang diberikan dengan teliti.
-- Jawablah pertanyaan dengan menghubungkan informasi yang ada di dalam KONTEKS.
-- Jika jawaban tidak disebutkan secara eksplisit, cobalah untuk memberikan dedukasi atau jawaban yang masih selaras dengan domain dokumen tersebut (Akademik/Fiqih).
-- Jika terpaksa menggunakan pengetahuan umum di luar teks, pastikan tetap relevan dengan topik dokumen dan berikan penjelasan yang logis.
-- Jawab dalam Bahasa Indonesia yang formal dan berwibawa.
+- Jawab HANYA berdasarkan konteks di bawah ini
+- Jika jawaban tidak ada dalam konteks, katakan "Saya tidak menemukan informasi tersebut dalam dokumen yang tersedia"
+- Jawab dalam Bahasa Indonesia yang jelas dan ringkas
+- Jangan mengarang informasi yang tidak ada di konteks
 
 KONTEKS:
 {context_text}
@@ -101,13 +100,13 @@ def answer_question(question: str, collection=None, top_k=TOP_K):
     if collection is None:
         collection = get_collection()
     
-    # 1. Retrieval
+    # Retrieval
     contexts = retrieve_context(collection, question, top_k=top_k)
     
-    # 2. Build Prompt
+    # Build Prompt
     prompt = build_prompt(question, contexts)
     
-    # 3. Generation
+    # Generation
     answer = get_answer_gemini(prompt)
     
     return {
